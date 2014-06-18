@@ -43,10 +43,6 @@ cdst: cdst.o $(OBJS)
 clean:
 	rm -fr $(OBJS) $(TARGETS) *~ *.out *.o
 
-rsync:
-	make clean
-	rsync -avlC --delete --progress -e ssh `pwd` ajw@andromeda.iso.utk.edu:work/covert/
-
 .SUFFIXES: .c .o
 .c.o: $*.c $*.h
 	$(CC) $(CFLAGS) -DENCODING=$(ENCODING) -c $(*).c
