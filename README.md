@@ -3,7 +3,9 @@ Covert Channels using TCP/IP Header Identiﬁcation Fields
 
 _I wrote this as the deliverable on an independant study program in 2006.  You can see the code on [github](https://github.com/algrym/covert-channels) or the original [PDF.](docs/covert.pdf)_
 
-_The documentation and proof of concept are included here for informational purposes only under the MIT License._
+_The documentation and proof of concept are included here for informational purposes only under the MIT License. Please don't use it for Evil._
+
+_**A. J. Wright** -- ajw@ajw.io_
 
 # Abstract
 Covert channels are used to secretly convey information from one place
