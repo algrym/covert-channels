@@ -1,0 +1,40 @@
+#!/bin/csh -f
+
+set PCAPBASE=http://www.tcpdump.org/release
+set PCAPFILE=libpcap-0.9.4
+
+set LIBDNETBASE=http://internap.dl.sourceforge.net/sourceforge/libdnet
+set LIBDNETFILE=libdnet-1.11
+
+set LIBFDRBASE=http://www.cs.utk.edu/~plank/plank/libfdr
+set LIBFDRFILE=libfdr
+
+set BASE=/usr/local
+
+if ($?DOLIBFDR) then
+  wget $LIBFDRBASE/$LIBFDRFILE\.tar
+  mkdir libfdr
+  pushd libfdr
+  tar xvf ../$LIBFDRFILE\.tar
+  make
+  popd
+  sudo mv libfdr $BASE
+endif
+
+if ($?DOPCAP) then
+  wget $PCAPBASE/$PCAPFILE\.tar.gz
+  tar xzvf $PCAPFILE\.tar.gz
+  pushd $PCAPFILE
+  ./configure --prefix=$BASE/$PCAPFILE && make -j 3 && sudo make install
+  sudo ln -s $BASE/$PCAPFILE $BASE/libpcap
+  popd
+endif
+
+if ($?DODNET) then
+  wget $LIBDNETBASE/$LIBDNETFILE\.tar.gz
+  tar xzvf $LIBDNETFILE\.tar.gz
+  pushd $LIBDNETFILE
+  ./configure --prefix=$BASE/$LIBDNETFILE && make -j 3 && sudo make install
+  sudo ln -s $BASE/$PCAPFILE $BASE/libdnet
+  popd
+endif
