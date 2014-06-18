@@ -1,8 +1,7 @@
----
-layout: page
-title: Covert Channels using TCP/IP Header Identiﬁcation Fields
----
-_I wrote this as the deliverable on an independant study program in 2006.  You can see the code on github or the original [PDF.](covert.pdf)_
+Covert Channels using TCP/IP Header Identiﬁcation Fields
+=================
+
+_A. J. Wright - ajw@ajw.io_
 
 Abstract
 ========
