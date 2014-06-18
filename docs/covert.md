@@ -352,7 +352,7 @@ IDS tool–were unable to recognize the CC traffic specifically as a
 covert channel. Presumably this is because no signature existed.
 However, it was occasionally flagged as anomalous data.
 
-Detecting this Covert Channel {#Detection}
+Detecting this Covert Channel
 -----------------------------
 
 Multiple potential detection techniques were observed, based on the
